@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: rosybrown;
+}
+
+
+.card{
+  height: 200px;
+  width:150px;
+  position: relative;
+  transform-style: preserve-3d;
+ transform: perspective(2000px);
+  background-color: white;
+  box-shadow: 0px 2px 5px black ;
+ transition: 1s;
+background: rgba(100, 200, 600, 0.5);
+}
+
+.card .cover{
+position: relative;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index:2; 
+  background: white;
+  display: flex;
+  transform-style: preserve-3d;
+  
+  justify-content: center;
+  align-items: center;
+  transition:  1s ease-in-out;
+  transform-origin:left;
+  overflow: hidden;
+  
+}
+
+.cover:before{
+ content: '';
+  height: 130%;
+  width: 5px;
+  /*background-color: red;*/
+  box-shadow: 0px 0px 0px 10px rebeccapurple;
+  position: absolute;
+  transform: rotate(36.5deg);
+  background: white;
+  transition: 0.8s;
+  transition-delay: 1s;
+}
+
+.card:hover{
+transform: perspective(2000px) translate(50%);
+}
+.card:hover .cover:before{
+  width: 0px;
+box-shadow: 0px 0px 0px 150px rebeccapurple;
+  transform: rotate(160deg);
+}
+.card:hover .cover{
+  transform: rotateY(-200deg);
+  
+}
+.cover img{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.card .details{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  font-size: 10px;
+ z-index: 1;
+
+}
+
+.details div img{
+  height: 60px;
+  width: 60px;
+}
+
+
